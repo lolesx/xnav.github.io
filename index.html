@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Arial", sans-serif;
+            text-align: center;
+            background: linear-gradient(to bottom, #00ccff, #0066cc);
+        }
+
+        #container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #header {
+            background: #ff6600;
+            color: white;
+            font-size: 48px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        #search-bar {
+            margin: 20px;
+        }
+
+        #search-bar input[type="text"] {
+            padding: 10px;
+            width: 300px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        #search-bar button {
+            padding: 10px 20px;
+            background-color: #ff6600;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        #buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .site-button {
+            padding: 10px;
+            background-color: #ff6600;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .site-button img {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 10px;
+        }
+
+        #credits {
+            color: #333;
+            font-size: 14px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="header">
+            HackNtN - MiNoTor
+        </div>
+        <div id="search-bar">
+            <form onsubmit="return performSearch();">
+                <input type="text" id="search-input" placeholder="Rechercher sur DuckDuckGo">
+                <button type="submit">Rechercher</button>
+            </form>
+        </div>
+        <div id="credits">
+            MiNoTor By Loles.<br>
+            Nocturnal Team 2023.
+        </div>
+    </div>
+
+    <script>
+        function performSearch() {
+            var searchInput = document.getElementById("search-input").value;
+            var duckduckgoUrl = "https://duckduckgo.com/?q=" + encodeURIComponent(searchInput);
+            window.location.href = duckduckgoUrl;
+            return false;
+        }
+    </script>
+</body>
+</html>
